@@ -1,0 +1,63 @@
+name: Access Gate Compose Check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  compose-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install Node dependencies
+        run: npm install
+
+      - name: Create local environment
+        run: cp .env.example .env
+
+      - name: Validate Compose
+        run: docker compose config --quiet
+
+      - name: Build and start stack
+        run: docker compose up -d --build --wait
+
+      - name: Show containers
+        run: docker compose ps
+
+      - name: Test API health
+        run: curl -fsS http://localhost:8000/health
+
+      - name: Test database readiness
+        run: docker compose exec -T db pg_isready -U gate -d gatedb
+
+      - name: Run Newman
+        run: npm run test:compose
+
+      - name: Verify readiness checklist
+        run: |
+          CHECKED=$(grep -cE '^[[:space:]]*-[[:space:]]*\[[xX]\]' checklists/readiness-checklist.md || true)
+          test "${CHECKED:-0}" -ge 6
+
+      - name: Upload Newman reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: newman-reports
+          path: reports/
+          if-no-files-found: warn
+
+      - name: Show logs on failure
+        if: failure()
+        run: docker compose logs
+
+      - name: Stop stack
+        if: always()
+        run: docker compose down -v

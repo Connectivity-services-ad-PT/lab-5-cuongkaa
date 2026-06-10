@@ -1,0 +1,933 @@
+﻿fit4110-gate-db         | The files belonging to this database system will be owned by user "postgres".
+fit4110-mock-analytics  | INFO:     Started server process [1]
+fit4110-gate-db         | This user must also own the server process.
+fit4110-gate-db         | 
+fit4110-mock-analytics  | INFO:     Waiting for application startup.
+fit4110-mock-analytics  | INFO:     Application startup complete.
+fit4110-mock-analytics  | INFO:     Uvicorn running on http://0.0.0.0:8002 (Press CTRL+C to quit)
+fit4110-gate-db         | The database cluster will be initialized with locale "en_US.utf8".
+fit4110-mock-core       | INFO:     Started server process [1]
+fit4110-access-gate     | INFO:     Started server process [7]
+fit4110-gate-db         | The default database encoding has accordingly been set to "UTF8".
+fit4110-mock-core       | INFO:     Waiting for application startup.
+fit4110-gate-db         | The default text search configuration will be set to "english".
+fit4110-mock-core       | INFO:     Application startup complete.
+fit4110-access-gate     | INFO:     Waiting for application startup.
+fit4110-gate-db         | 
+fit4110-gate-db         | Data page checksums are disabled.
+fit4110-access-gate     | 2026-06-10 03:06:15,843 INFO access-gate Database schema is ready
+fit4110-gate-db         | 
+fit4110-access-gate     | INFO:     Application startup complete.
+fit4110-mock-core       | INFO:     Uvicorn running on http://0.0.0.0:8001 (Press CTRL+C to quit)
+fit4110-access-gate     | INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+fit4110-mock-core       | INFO:     127.0.0.1:42472 - "GET /health HTTP/1.1" 200 OK
+fit4110-gate-db         | fixing permissions on existing directory /var/lib/postgresql/data ... ok
+fit4110-gate-db         | creating subdirectories ... ok
+fit4110-mock-core       | INFO:     127.0.0.1:38390 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:43318 - "GET /health HTTP/1.1" 200 OK
+fit4110-gate-db         | selecting dynamic shared memory implementation ... posix
+fit4110-gate-db         | selecting default max_connections ... 100
+fit4110-mock-analytics  | INFO:     127.0.0.1:56890 - "GET /health HTTP/1.1" 200 OK
+fit4110-gate-db         | selecting default shared_buffers ... 128MB
+fit4110-access-gate     | INFO:     127.0.0.1:54918 - "GET /health HTTP/1.1" 200 OK
+fit4110-gate-db         | selecting default time zone ... UTC
+fit4110-access-gate     | INFO:     127.0.0.1:35760 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:52890 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:48212 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:41794 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:56322 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:36538 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:56606 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:51884 - "GET /health HTTP/1.1" 200 OK
+fit4110-gate-db         | creating configuration files ... ok
+fit4110-access-gate     | INFO:     127.0.0.1:58428 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:34628 - "GET /health HTTP/1.1" 200 OK
+fit4110-gate-db         | running bootstrap script ... ok
+fit4110-access-gate     | INFO:     127.0.0.1:55834 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:54640 - "GET /health HTTP/1.1" 200 OK
+fit4110-gate-db         | sh: locale: not found
+fit4110-access-gate     | INFO:     127.0.0.1:43154 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:51758 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:36628 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:49982 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:58540 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:56464 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:33130 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:55136 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:59780 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:36674 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:33002 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:56162 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:59732 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:60980 - "GET /health HTTP/1.1" 200 OK
+fit4110-gate-db         | 2026-06-10 02:47:25.097 UTC [35] WARNING:  no usable system locales were found
+fit4110-gate-db         | performing post-bootstrap initialization ... ok
+fit4110-gate-db         | initdb: warning: enabling "trust" authentication for local connections
+fit4110-gate-db         | initdb: hint: You can change this by editing pg_hba.conf or using the option -A, or --auth-local and --auth-host, the next time you run initdb.
+fit4110-gate-db         | syncing data to disk ... ok
+fit4110-gate-db         | 
+fit4110-mock-analytics  | INFO:     127.0.0.1:43962 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:45090 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:40492 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:43964 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:57900 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:48980 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:58244 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:60912 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:56348 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:39774 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:47222 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:49406 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:39200 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:46150 - "GET /health HTTP/1.1" 200 OK
+fit4110-gate-db         | 
+fit4110-mock-analytics  | INFO:     127.0.0.1:51980 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:41734 - "GET /health HTTP/1.1" 200 OK
+fit4110-gate-db         | Success. You can now start the database server using:
+fit4110-mock-core       | INFO:     127.0.0.1:36528 - "GET /health HTTP/1.1" 200 OK
+fit4110-gate-db         | 
+fit4110-mock-analytics  | INFO:     127.0.0.1:60584 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:38018 - "GET /health HTTP/1.1" 200 OK
+fit4110-gate-db         |     pg_ctl -D /var/lib/postgresql/data -l logfile start
+fit4110-mock-analytics  | INFO:     127.0.0.1:38242 - "GET /health HTTP/1.1" 200 OK
+fit4110-gate-db         | 
+fit4110-mock-analytics  | INFO:     127.0.0.1:59872 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:59304 - "GET /health HTTP/1.1" 200 OK
+fit4110-gate-db         | waiting for server to start....2026-06-10 02:47:26.201 UTC [41] LOG:  starting PostgreSQL 15.18 on x86_64-pc-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit
+fit4110-access-gate     | INFO:     127.0.0.1:56178 - "GET /health HTTP/1.1" 200 OK
+fit4110-gate-db         | 2026-06-10 02:47:26.205 UTC [41] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+fit4110-mock-analytics  | INFO:     127.0.0.1:60258 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:42912 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:57214 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:41828 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:60260 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:39394 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:39382 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:40848 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:44724 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:49816 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:57188 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:52460 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:34174 - "GET /health HTTP/1.1" 200 OK
+fit4110-gate-db         | 2026-06-10 02:47:26.215 UTC [44] LOG:  database system was shut down at 2026-06-10 02:47:25 UTC
+fit4110-mock-analytics  | INFO:     127.0.0.1:50902 - "GET /health HTTP/1.1" 200 OK
+fit4110-gate-db         | 2026-06-10 02:47:26.222 UTC [41] LOG:  database system is ready to accept connections
+fit4110-mock-analytics  | INFO:     127.0.0.1:50696 - "GET /health HTTP/1.1" 200 OK
+fit4110-gate-db         |  done
+fit4110-mock-core       | INFO:     127.0.0.1:55282 - "GET /health HTTP/1.1" 200 OK
+fit4110-gate-db         | server started
+fit4110-mock-analytics  | INFO:     127.0.0.1:53924 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:52614 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:42606 - "GET /health HTTP/1.1" 200 OK
+fit4110-gate-db         | CREATE DATABASE
+fit4110-mock-core       | INFO:     127.0.0.1:35650 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:50210 - "GET /health HTTP/1.1" 200 OK
+fit4110-gate-db         | 
+fit4110-mock-core       | INFO:     127.0.0.1:39716 - "GET /health HTTP/1.1" 200 OK
+fit4110-gate-db         | 
+fit4110-mock-core       | INFO:     127.0.0.1:46418 - "GET /health HTTP/1.1" 200 OK
+fit4110-gate-db         | /usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*
+fit4110-mock-analytics  | INFO:     127.0.0.1:37098 - "GET /health HTTP/1.1" 200 OK
+fit4110-gate-db         | 
+fit4110-mock-analytics  | INFO:     127.0.0.1:53160 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:45836 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:53182 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:48926 - "GET /health HTTP/1.1" 200 OK
+fit4110-gate-db         | waiting for server to shut down...2026-06-10 02:47:26.347 UTC [41] LOG:  received fast shutdown request
+fit4110-access-gate     | INFO:     127.0.0.1:52500 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:34058 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:51900 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     172.18.0.1:40570 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:39304 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:34990 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:57858 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:47884 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     172.18.0.1:40570 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+fit4110-mock-analytics  | INFO:     127.0.0.1:56480 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:50458 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:49850 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:34916 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:55028 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:58204 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:40310 - "GET /health HTTP/1.1" 200 OK
+fit4110-gate-db         | .2026-06-10 02:47:26.350 UTC [41] LOG:  aborting any active transactions
+fit4110-mock-analytics  | INFO:     127.0.0.1:40344 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:46088 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:33022 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:44472 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:54946 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:40694 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:40136 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:37516 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:47394 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:50900 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:56918 - "GET /health HTTP/1.1" 200 OK
+fit4110-gate-db         | 2026-06-10 02:47:26.352 UTC [41] LOG:  background worker "logical replication launcher" (PID 47) exited with exit code 1
+fit4110-mock-core       | INFO:     127.0.0.1:45494 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:36792 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:39854 - "GET /health HTTP/1.1" 200 OK
+fit4110-gate-db         | 2026-06-10 02:47:26.353 UTC [42] LOG:  shutting down
+fit4110-mock-core       | INFO:     127.0.0.1:55582 - "GET /health HTTP/1.1" 200 OK
+fit4110-gate-db         | 2026-06-10 02:47:26.354 UTC [42] LOG:  checkpoint starting: shutdown immediate
+fit4110-mock-core       | INFO:     127.0.0.1:33372 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:54420 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:51218 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:49242 - "GET /health HTTP/1.1" 200 OK
+fit4110-gate-db         | 2026-06-10 02:47:26.427 UTC [42] LOG:  checkpoint complete: wrote 921 buffers (5.6%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.017 s, sync=0.049 s, total=0.075 s; sync files=301, longest=0.003 s, average=0.001 s; distance=4238 kB, estimate=4238 kB
+fit4110-gate-db         | 2026-06-10 02:47:26.433 UTC [41] LOG:  database system is shut down
+fit4110-gate-db         |  done
+fit4110-gate-db         | server stopped
+fit4110-mock-analytics  | INFO:     127.0.0.1:49998 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:42630 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:43456 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:44518 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:59070 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:45174 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:39608 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:53254 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:53450 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:38492 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:36464 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:60886 - "GET /health HTTP/1.1" 200 OK
+fit4110-gate-db         | 
+fit4110-access-gate     | INFO:     127.0.0.1:41034 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:49074 - "GET /health HTTP/1.1" 200 OK
+fit4110-gate-db         | PostgreSQL init process complete; ready for start up.
+fit4110-access-gate     | INFO:     127.0.0.1:50466 - "GET /health HTTP/1.1" 200 OK
+fit4110-gate-db         | 
+fit4110-access-gate     | INFO:     127.0.0.1:38570 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:57376 - "GET /health HTTP/1.1" 200 OK
+fit4110-gate-db         | 2026-06-10 02:47:26.468 UTC [1] LOG:  starting PostgreSQL 15.18 on x86_64-pc-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit
+fit4110-gate-db         | 2026-06-10 02:47:26.469 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+fit4110-access-gate     | INFO:     127.0.0.1:58366 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:53334 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:57100 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:42446 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:54430 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:51756 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:38544 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:37568 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:60230 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:54822 - "GET /health HTTP/1.1" 200 OK
+fit4110-gate-db         | 2026-06-10 02:47:26.469 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+fit4110-access-gate     | INFO:     127.0.0.1:38906 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:49998 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:34924 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:33836 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:59358 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:45914 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:39740 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:38308 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:41210 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:60764 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:44972 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:44704 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:56932 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:34234 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:40772 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:42828 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:50440 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:57682 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:36414 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:53634 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:59926 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:55002 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:47648 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:52452 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:50538 - "GET /health HTTP/1.1" 200 OK
+fit4110-gate-db         | 2026-06-10 02:47:26.475 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+fit4110-mock-core       | INFO:     127.0.0.1:58990 - "GET /health HTTP/1.1" 200 OK
+fit4110-gate-db         | 2026-06-10 02:47:26.483 UTC [57] LOG:  database system was shut down at 2026-06-10 02:47:26 UTC
+fit4110-gate-db         | 2026-06-10 02:47:26.489 UTC [1] LOG:  database system is ready to accept connections
+fit4110-access-gate     | INFO:     127.0.0.1:59012 - "GET /health HTTP/1.1" 200 OK
+fit4110-gate-db         | 2026-06-10 02:52:33.117 UTC [55] LOG:  checkpoint starting: time
+fit4110-access-gate     | INFO:     127.0.0.1:51266 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     172.18.0.1:38496 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:57684 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:38032 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:36210 - "GET /health HTTP/1.1" 200 OK
+fit4110-gate-db         | 2026-06-10 02:52:41.999 UTC [55] LOG:  checkpoint complete: wrote 91 buffers (0.6%); 0 WAL file(s) added, 0 removed, 0 recycled; write=8.842 s, sync=0.024 s, total=8.882 s; sync files=49, longest=0.006 s, average=0.001 s; distance=405 kB, estimate=405 kB
+fit4110-access-gate     | INFO:     127.0.0.1:39532 - "GET /health HTTP/1.1" 200 OK
+fit4110-gate-db         | 2026-06-10 02:57:41.177 UTC [55] LOG:  checkpoint starting: time
+fit4110-access-gate     | INFO:     127.0.0.1:55146 - "GET /health HTTP/1.1" 200 OK
+fit4110-gate-db         | 2026-06-10 02:57:41.399 UTC [55] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.203 s, sync=0.006 s, total=0.223 s; sync files=3, longest=0.004 s, average=0.002 s; distance=2 kB, estimate=365 kB
+fit4110-gate-db         | 2026-06-10 03:49:01.177 UTC [55] LOG:  checkpoint starting: time
+fit4110-gate-db         | 2026-06-10 03:49:01.416 UTC [55] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.213 s, sync=0.008 s, total=0.240 s; sync files=3, longest=0.006 s, average=0.003 s; distance=2 kB, estimate=328 kB
+fit4110-mock-analytics  | INFO:     127.0.0.1:58556 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:32902 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:51724 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:43474 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:51172 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:55536 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:56558 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:59044 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:56756 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:55774 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:43236 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:37168 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:44032 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:53748 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:38576 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:57312 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:39860 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:35986 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:59018 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:53716 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:47320 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:43654 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:46722 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:60612 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:60440 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:36482 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:55130 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:59704 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:32808 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:40232 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:35238 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:51690 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:41168 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:45550 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:52676 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:46554 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:48202 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:55672 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:47950 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:59776 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:40512 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:38838 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:34606 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:36892 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:57488 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:56654 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:36350 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:34526 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:44014 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:39650 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:37846 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:39934 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:50920 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:56790 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:54558 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:39068 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:48672 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:54572 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:34382 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:42064 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:40124 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:56598 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:60116 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:43006 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:56822 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:41384 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:51262 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:36420 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:47866 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:46718 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:41372 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:58776 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:34190 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:44518 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:33540 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:60774 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:54164 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:56566 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:37244 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:43456 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:51272 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:40068 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:42290 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:59258 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:53100 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:49584 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:50030 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:52344 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:50612 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:32872 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:56154 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:56074 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:55906 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:33710 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:58592 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:51914 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:39000 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:46646 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:55866 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:36940 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:56818 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:43854 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:53464 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:59480 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:55034 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:36006 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:35752 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:35930 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:37302 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:44134 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:34932 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:39286 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:42236 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:55366 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:56676 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:52670 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:35392 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:40970 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:55960 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:34254 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:55332 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:34006 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:49116 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:43554 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:35160 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:59648 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:44700 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:49518 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:58024 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:36916 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:36714 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:54072 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:33492 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:34544 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:41274 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:60036 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:55036 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:44970 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:43200 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:37188 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:52322 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:55936 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     172.18.0.1:33902 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:59076 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:45690 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:54910 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:48684 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:36752 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:58146 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:34482 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:34372 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:52286 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:55364 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:35510 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:40410 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:40194 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:41232 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:58028 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:36994 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:41254 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:50614 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:38412 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:37866 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:36896 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:43824 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:54712 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:33380 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:38098 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:43764 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:33928 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:50170 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:32810 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:35120 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:40696 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:33278 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:59504 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:39892 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:54512 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:45372 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:46424 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:55570 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:58956 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:43146 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:50728 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:56640 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:47688 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:35506 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:59536 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:38944 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:34780 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:37110 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:35542 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:58444 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:52858 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:55040 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:54390 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:38980 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:52722 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:54832 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:40876 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:33846 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:35526 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:50240 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:41068 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:46884 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:34222 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:57172 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:45770 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:51474 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:56150 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:51360 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:60300 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:58464 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:45714 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:41046 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:50840 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:42464 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:41700 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:47414 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:48420 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:53538 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:50524 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:53314 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:35626 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:50470 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:55864 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:34764 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:54756 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:33272 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:37178 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:37722 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:60558 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:51508 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:54938 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:38974 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:48554 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:33668 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:35366 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:52374 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:60508 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:32864 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:39020 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:56562 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:58676 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:56468 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:42108 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:35472 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:34410 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:39760 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:35824 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:44170 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:56692 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:57732 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:47154 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:37624 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:36542 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:35426 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:55526 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:57408 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:34882 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:59450 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:47754 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:51608 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:43952 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:43444 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:49506 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:39330 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:57448 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:50532 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:53334 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:44760 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:38588 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:60854 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:47234 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:58044 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:59822 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:54444 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:47570 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:36380 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:57224 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:33836 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:44820 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:56458 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:55040 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:46274 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:33792 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:52712 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:35392 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:46212 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:48936 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:43484 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:46836 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:41514 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:38196 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:45696 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:47976 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:38004 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:32984 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:36676 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:39292 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:33888 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:47776 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:35006 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:39876 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:49484 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:50222 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:56492 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:42242 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:58584 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:48678 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:43800 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:54930 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:38036 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:51364 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:54514 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:60864 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:42100 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:33416 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:47790 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:50886 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:55274 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:43732 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:59196 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:50092 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:46582 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:53728 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:49348 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:42784 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:42646 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:46462 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:39812 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:41158 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:43432 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:47736 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:33090 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:40710 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:37228 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:46430 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:41982 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:40942 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:55388 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:40650 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:52322 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:43024 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:37230 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:45748 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:35492 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:37322 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:37320 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:44224 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:33166 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:59156 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:51526 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:54106 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:36434 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:57656 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:47070 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:33074 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:52872 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:43854 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:42338 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:43858 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:57778 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:38482 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:50176 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:43436 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:47702 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:59652 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:49310 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:36012 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:39512 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:57728 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:40046 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:41198 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:46038 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:60902 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:42224 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:40138 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:48920 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:44708 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:44316 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:36108 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:38346 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:32960 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:44274 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:35208 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:38342 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:48070 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:40536 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:49588 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:35922 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:40146 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:50080 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:50544 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:36134 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:48300 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:42080 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:40064 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:41266 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:39826 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:46818 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:42118 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:55976 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:56082 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:44286 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:41922 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:38514 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:48516 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:58774 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:34584 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:50020 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:44630 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:50582 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:60336 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:41444 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:39508 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:48628 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:59662 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:49588 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:48782 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:41484 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:43360 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:53526 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:34014 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:60528 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:34438 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:49158 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:56446 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:60210 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:48472 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:54078 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:46664 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:58864 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:48368 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:35670 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:51676 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:39666 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:36554 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:43696 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:44008 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:53678 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:54870 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:48978 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:52030 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:34022 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:48256 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:47464 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     172.18.0.1:59658 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:56486 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:59906 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:45116 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:56646 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:38366 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:42398 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     172.18.0.1:59672 - "GET / HTTP/1.1" 404 Not Found
+fit4110-mock-core       | INFO:     127.0.0.1:60054 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:55140 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     172.18.0.1:59680 - "GET /api/v1/access-events HTTP/1.1" 405 Method Not Allowed
+fit4110-mock-core       | INFO:     127.0.0.1:59598 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:33032 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     172.18.0.1:59688 - "GET /api/v1/access-events/latest?limit=10 HTTP/1.1" 401 Unauthorized
+fit4110-mock-analytics  | INFO:     127.0.0.1:52556 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     172.18.0.1:59672 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:40956 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:50968 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:38456 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:57164 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:43722 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:37444 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:49500 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:42342 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:48318 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:44052 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:36778 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:49976 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:45874 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:39120 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:50996 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:34416 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:34118 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:45038 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:39114 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:39696 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:55518 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:47088 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:49352 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:57168 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:41890 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:51684 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:54974 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:43726 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:49120 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:37350 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:48426 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:58386 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:44496 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:56916 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:45014 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:57484 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:48478 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:39730 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:53936 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:46502 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:44636 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:59076 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:44936 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:56448 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:53026 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:46692 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:38446 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:45266 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:47632 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:39390 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:32972 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:52286 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:50642 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:43498 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:51488 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:47724 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     172.18.0.5:57732 - "POST /api/v1/events HTTP/1.1" 202 Accepted
+fit4110-access-gate     | INFO:     127.0.0.1:33124 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     172.18.0.5:57736 - "POST /api/v1/events HTTP/1.1" 202 Accepted
+fit4110-access-gate     | INFO:     127.0.0.1:48900 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:37488 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:43766 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:54526 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:55934 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:53050 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     172.18.0.1:41828 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:33962 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:42198 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:58524 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:44598 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:42326 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:59690 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:35868 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:43010 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:52420 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:48536 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:41588 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:53962 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:44034 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:47596 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:45968 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:56748 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:50234 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:54428 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:47106 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:39884 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:33750 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:40214 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:60262 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     172.18.0.1:60654 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:56934 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     172.18.0.1:60654 - "POST /api/v1/access-events HTTP/1.1" 401 Unauthorized
+fit4110-mock-core       | INFO:     127.0.0.1:55932 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | 2026-06-10 03:48:43,029 INFO httpx HTTP Request: POST http://mock-core:8001/api/v1/access-events "HTTP/1.1 200 OK"
+fit4110-mock-analytics  | INFO:     127.0.0.1:50890 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | 2026-06-10 03:48:43,048 INFO httpx HTTP Request: POST http://mock-analytics:8002/api/v1/events "HTTP/1.1 202 Accepted"
+fit4110-mock-analytics  | INFO:     127.0.0.1:40920 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:44096 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     172.18.0.1:60654 - "POST /api/v1/access-events HTTP/1.1" 201 Created
+fit4110-mock-core       | INFO:     127.0.0.1:36680 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:55978 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:55122 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:36652 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | 2026-06-10 03:48:43,178 INFO httpx HTTP Request: POST http://mock-core:8001/api/v1/access-events "HTTP/1.1 200 OK"
+fit4110-mock-analytics  | INFO:     127.0.0.1:59688 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:42396 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:44788 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:36954 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:49184 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:33828 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:52632 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | 2026-06-10 03:48:43,191 INFO httpx HTTP Request: POST http://mock-analytics:8002/api/v1/events "HTTP/1.1 202 Accepted"
+fit4110-mock-core       | INFO:     127.0.0.1:34846 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     172.18.0.1:60654 - "POST /api/v1/access-events HTTP/1.1" 201 Created
+fit4110-mock-analytics  | INFO:     127.0.0.1:45674 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     172.18.0.1:60654 - "POST /api/v1/access-events HTTP/1.1" 422 Unprocessable Entity
+fit4110-mock-analytics  | INFO:     127.0.0.1:42938 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     172.18.0.1:60654 - "GET /api/v1/access-events/latest?gate_id=GATE-A01&limit=10 HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:52640 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     172.18.0.1:60654 - "GET /api/v1/access-events/GATE-20260610-6CBEAA46 HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     172.18.0.5:48546 - "POST /api/v1/events HTTP/1.1" 202 Accepted
+fit4110-mock-core       | INFO:     127.0.0.1:47410 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     172.18.0.5:48560 - "POST /api/v1/events HTTP/1.1" 202 Accepted
+fit4110-mock-core       | INFO:     127.0.0.1:57598 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     172.18.0.1:60654 - "GET /api/v1/access-events/GATE-20990101-NOTFOUND HTTP/1.1" 404 Not Found
+fit4110-mock-core       | INFO:     127.0.0.1:52696 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:48752 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:36972 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:35756 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:37130 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:33394 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:45392 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:43344 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:49564 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:41960 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:37834 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:34960 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:37616 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:32788 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:53910 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:58126 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:38214 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-analytics  | INFO:     127.0.0.1:60394 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:60386 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:55270 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:40466 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:51912 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     172.18.0.5:37902 - "POST /api/v1/access-events HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:46352 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:48884 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:45066 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     172.18.0.5:37912 - "POST /api/v1/access-events HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:40780 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:37086 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:40054 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:55456 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:42468 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:53246 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:55882 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:36998 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:40948 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:48470 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     172.18.0.1:37160 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:45286 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     172.18.0.1:37160 - "POST /api/v1/access-events HTTP/1.1" 401 Unauthorized
+fit4110-mock-core       | INFO:     127.0.0.1:37558 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:53020 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | 2026-06-10 03:51:59,188 WARNING access-gate Core request failed (attempt 1/2): Cannot reach Business Core: [Errno -2] Name or service not known
+fit4110-mock-core       | INFO:     127.0.0.1:49968 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:36458 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     Shutting down
+fit4110-access-gate     | 2026-06-10 03:52:03,074 WARNING access-gate Core request failed (attempt 2/2): Cannot reach Business Core: [Errno -2] Name or service not known
+fit4110-access-gate     | INFO:     172.18.0.1:37160 - "POST /api/v1/access-events HTTP/1.1" 503 Service Unavailable
+fit4110-access-gate     | 2026-06-10 03:52:07,084 WARNING access-gate Core request failed (attempt 1/2): Cannot reach Business Core: [Errno -2] Name or service not known
+fit4110-access-gate     | 2026-06-10 03:52:10,963 WARNING access-gate Core request failed (attempt 2/2): Cannot reach Business Core: [Errno -2] Name or service not known
+fit4110-access-gate     | INFO:     172.18.0.1:37160 - "POST /api/v1/access-events HTTP/1.1" 503 Service Unavailable
+fit4110-mock-core       | INFO:     Waiting for application shutdown.
+fit4110-access-gate     | INFO:     172.18.0.1:37160 - "POST /api/v1/access-events HTTP/1.1" 422 Unprocessable Entity
+fit4110-mock-core       | INFO:     Application shutdown complete.
+fit4110-access-gate     | INFO:     172.18.0.1:37160 - "GET /api/v1/access-events/latest?gate_id=GATE-A01&limit=10 HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     172.18.0.1:37160 - "GET /api/v1/access-events/null HTTP/1.1" 404 Not Found
+fit4110-mock-core       | INFO:     Finished server process [1]
+fit4110-mock-core       | INFO:     Started server process [1]
+fit4110-mock-core       | INFO:     Waiting for application startup.
+fit4110-mock-core       | INFO:     Application startup complete.
+fit4110-access-gate     | INFO:     172.18.0.1:37160 - "GET /api/v1/access-events/GATE-20990101-NOTFOUND HTTP/1.1" 404 Not Found
+fit4110-access-gate     | INFO:     127.0.0.1:36996 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     Uvicorn running on http://0.0.0.0:8001 (Press CTRL+C to quit)
+fit4110-access-gate     | INFO:     172.18.0.1:53236 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:38606 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     172.18.0.1:53236 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:49526 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:43144 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:54952 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     172.18.0.5:41770 - "POST /api/v1/access-events HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:38742 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     172.18.0.5:41786 - "POST /api/v1/access-events HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     172.18.0.1:58930 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:35966 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:56542 - "GET /health HTTP/1.1" 200 OK
+fit4110-mock-core       | INFO:     127.0.0.1:49370 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     172.18.0.1:58930 - "POST /api/v1/access-events HTTP/1.1" 401 Unauthorized
+fit4110-access-gate     | 2026-06-10 03:52:55,482 INFO httpx HTTP Request: POST http://mock-core:8001/api/v1/access-events "HTTP/1.1 200 OK"
+fit4110-access-gate     | 2026-06-10 03:52:55,498 INFO httpx HTTP Request: POST http://mock-analytics:8002/api/v1/events "HTTP/1.1 202 Accepted"
+fit4110-access-gate     | INFO:     172.18.0.1:58930 - "POST /api/v1/access-events HTTP/1.1" 201 Created
+fit4110-access-gate     | 2026-06-10 03:52:55,633 INFO httpx HTTP Request: POST http://mock-core:8001/api/v1/access-events "HTTP/1.1 200 OK"
+fit4110-access-gate     | 2026-06-10 03:52:55,649 INFO httpx HTTP Request: POST http://mock-analytics:8002/api/v1/events "HTTP/1.1 202 Accepted"
+fit4110-access-gate     | INFO:     172.18.0.1:58930 - "POST /api/v1/access-events HTTP/1.1" 201 Created
+fit4110-access-gate     | INFO:     172.18.0.1:58930 - "POST /api/v1/access-events HTTP/1.1" 422 Unprocessable Entity
+fit4110-access-gate     | INFO:     172.18.0.1:58930 - "GET /api/v1/access-events/latest?gate_id=GATE-A01&limit=10 HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     172.18.0.1:58930 - "GET /api/v1/access-events/GATE-20260610-0DEA8F6E HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     172.18.0.1:58930 - "GET /api/v1/access-events/GATE-20990101-NOTFOUND HTTP/1.1" 404 Not Found
+fit4110-access-gate     | INFO:     127.0.0.1:36198 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:49408 - "GET /health HTTP/1.1" 200 OK
+fit4110-access-gate     | INFO:     127.0.0.1:56470 - "GET /health HTTP/1.1" 200 OK

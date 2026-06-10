@@ -1,114 +1,82 @@
-# RUN_COMPOSE.md – Hướng dẫn chạy Lab 05
+# Run the Access Gate stack
 
-Tài liệu này hướng dẫn người khác clone repo sạch và chạy lại stack Compose của Lab 05.
+## Requirements
 
----
+- Docker Desktop with Compose v2
+- Node.js 20 or newer for Newman
 
-## 1. Clone repo
+## Start
 
-```bash
-git clone <repo-url>
-cd FIT4110_lab05_docker_compose_readiness
+```powershell
+Copy-Item .env.example .env
+docker compose config --quiet
+docker compose up -d --build --wait
+docker compose ps
 ```
 
----
+Expected containers:
 
-## 2. Cài dependencies cho Newman/Prism/Spectral (tuỳ chọn)
+```text
+fit4110-access-gate
+fit4110-gate-db
+fit4110-mock-core
+fit4110-mock-analytics
+```
 
-```bash
+## Smoke tests
+
+```powershell
+curl.exe http://localhost:8000/health
+
+curl.exe -X POST http://localhost:8000/api/v1/access-events `
+  -H "Authorization: Bearer local-dev-token" `
+  -H "Content-Type: application/json" `
+  -d '{"gate_id":"GATE-A01","credential_id":"CARD-001","direction":"entry","timestamp":"2026-06-10T09:30:00+07:00"}'
+```
+
+Credential IDs beginning with `BLOCKED` are denied by the local Core mock.
+
+## Newman reports
+
+```powershell
 npm install
-```
-
----
-
-## 3. Build & chạy stack Docker Compose
-
-```bash
-# Copy .env.example sang .env và chỉnh sửa nếu cần
-cp .env.example .env
-
-# Build images (nếu chưa có) và khởi động các container trong nền
-docker compose up -d --build
-```
-
-Lệnh trên sẽ tạo các container:
-
-- `fit4110-db-lab05` (PostgreSQL)
-- `fit4110-ai-lab05` (AI service mẫu chạy port 9000)
-- `fit4110-api-lab05` (API FastAPI trên port 8000)
-
-Theo dõi log:
-
-```bash
-docker compose logs -f
-```
-
-Sau vài giây, kiểm tra health của mỗi service:
-
-```bash
-# API
-curl http://localhost:8000/health
-
-# AI service
-curl http://localhost:9000/health
-
-# DB readiness
-docker exec -it fit4110-db-lab05 pg_isready -U $POSTGRES_USER
-```
-
-Bạn cũng có thể truy cập endpoint `/predict` của AI service để xem kết quả mẫu:
-
-```bash
-curl -X POST http://localhost:9000/predict
-```
-
----
-
-## 4. Chạy Newman test trên stack Compose (tuỳ chọn)
-
-```bash
 npm run test:compose
 ```
 
-Report sinh tại:
+Reports are written to:
 
 ```text
 reports/newman-lab05-compose.xml
 reports/newman-lab05-compose.html
 ```
 
----
+## Connect to real partner laptops
 
-## 5. Dừng stack
+Find the partner laptop IPv4 address on the shared hotspot and edit `.env`:
 
-Khi không cần nữa, dừng và xoá các container bằng:
+```env
+CORE_SERVICE_URL=http://<core-ip>:8000
+ANALYTICS_SERVICE_URL=http://<analytics-ip>:8000
+```
 
-```bash
+Do not change `DATABASE_URL`; PostgreSQL remains on the local Docker network.
+
+Verify connectivity before starting the demo:
+
+```powershell
+curl.exe http://<core-ip>:8000/health
+curl.exe http://<analytics-ip>:8000/health
+docker compose up -d --build --force-recreate api
+```
+
+Ensure Windows Firewall allows inbound TCP port 8000 for the Access Gate API.
+
+## Logs and cleanup
+
+```powershell
+docker compose logs --no-color > reports/logs-compose.txt
 docker compose down
 ```
 
-Nếu muốn xoá volume dữ liệu của DB, thêm tuỳ chọn `-v`:
-
-```bash
-docker compose down -v
-```
-
----
-
-## 6. Lệnh nhanh
-
-Bạn có thể dùng Makefile:
-
-```bash
-make compose-up
-make compose-down
-make logs
-```
-
----
-
-## 7. Mẹo gỡ lỗi
-
-- Sử dụng `docker compose ps` để xem trạng thái container.
-- Nếu API trả lỗi kết nối DB, hãy kiểm tra biến môi trường `POSTGRES_*` trong `.env` và đảm bảo DB đã sẵn sàng (`pg_isready`).
-- Nếu AI service cần tải mô hình lớn, tăng `start_period` của healthcheck trong `docker-compose.yml`.
+Use `docker compose down -v` only when you intentionally want to remove stored
+database data.

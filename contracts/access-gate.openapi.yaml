@@ -1,0 +1,179 @@
+openapi: 3.1.0
+info:
+  title: FIT4110 Access Gate API
+  version: 1.0.0
+  description: Access Gate service integrated with Business Core and Analytics.
+servers:
+  - url: http://localhost:8000
+security:
+  - bearerAuth: []
+paths:
+  /health:
+    get:
+      summary: Check service and database readiness
+      security: []
+      responses:
+        "200":
+          description: Service health
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Health"
+  /api/v1/access-events:
+    post:
+      summary: Evaluate and record an access event
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AccessEventCreate"
+            example:
+              gate_id: GATE-A01
+              credential_id: CARD-001
+              direction: entry
+              timestamp: "2026-06-10T09:30:00+07:00"
+              metadata:
+                source: card-reader
+      responses:
+        "201":
+          description: Core decision recorded
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AccessEventResult"
+        "401":
+          $ref: "#/components/responses/Problem"
+        "422":
+          $ref: "#/components/responses/Problem"
+        "503":
+          $ref: "#/components/responses/Problem"
+  /api/v1/access-events/latest:
+    get:
+      summary: Get latest access events
+      parameters:
+        - name: gate_id
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100
+            default: 10
+      responses:
+        "200":
+          description: Latest access events
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [items]
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/AccessEvent"
+  /api/v1/access-events/{event_id}:
+    get:
+      summary: Get an access event by ID
+      parameters:
+        - name: event_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Access event
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AccessEvent"
+        "404":
+          $ref: "#/components/responses/Problem"
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+  responses:
+    Problem:
+      description: Problem details
+      content:
+        application/problem+json:
+          schema:
+            $ref: "#/components/schemas/Problem"
+  schemas:
+    Health:
+      type: object
+      required: [status, service, version, database]
+      properties:
+        status:
+          type: string
+          enum: [ok, degraded]
+        service:
+          type: string
+        version:
+          type: string
+        database:
+          type: string
+          enum: [ready, unavailable]
+    AccessEventCreate:
+      type: object
+      required: [gate_id, credential_id, direction, timestamp]
+      properties:
+        gate_id:
+          type: string
+          minLength: 2
+        credential_id:
+          type: string
+          minLength: 2
+        direction:
+          type: string
+          enum: [entry, exit]
+        timestamp:
+          type: string
+          format: date-time
+        metadata:
+          type: object
+          additionalProperties: true
+    AccessEventResult:
+      type: object
+      required: [event_id, decision, reason, analytics_status, created_at]
+      properties:
+        event_id:
+          type: string
+        decision:
+          type: string
+          enum: [ALLOW, DENY]
+        reason:
+          type: string
+        subject_id:
+          type: [string, "null"]
+        analytics_status:
+          type: string
+          enum: [sent, failed]
+        created_at:
+          type: string
+          format: date-time
+    AccessEvent:
+      allOf:
+        - $ref: "#/components/schemas/AccessEventCreate"
+        - $ref: "#/components/schemas/AccessEventResult"
+    Problem:
+      type: object
+      required: [type, title, status, detail, instance]
+      properties:
+        type:
+          type: string
+        title:
+          type: string
+        status:
+          type: integer
+        detail:
+          type: string
+        instance:
+          type: string

@@ -1,16 +1,18 @@
-# Readiness Checklist – Lab 05
+# Access Gate Readiness Checklist
 
-Đây là danh sách kiểm tra (checklist) để đảm bảo stack Docker Compose của bạn đã sẵn sàng trước khi gửi bài. Hãy tick vào mỗi mục sau khi hoàn thành.
+- [x] **Database ready:** PostgreSQL has a `pg_isready` healthcheck and `/health` verifies the connection.
+- [x] **Business Core ready:** local mock is healthy; the real URL is configured with `CORE_SERVICE_URL`.
+- [x] **Analytics ready:** local mock accepts events; the real URL is configured with `ANALYTICS_SERVICE_URL`.
+- [x] **API ready:** health and Access Gate endpoints use bearer authentication where required.
+- [x] **Timeout handling:** Core uses a configurable timeout/retry and fails closed with HTTP 503.
+- [x] **Network and ports:** the API is published on port 8000 and binds to `0.0.0.0`.
+- [x] **Environment variables:** `.env.example` has local-safe values and no fixed partner IPs.
+- [x] **Image tag:** the API uses `fit4110/access-gate:v1.0.0-team-gate`.
+- [x] **Automated tests:** Newman covers health, auth, ALLOW, DENY, validation and queries.
 
-- [ ] **Database ready:** container DB đã chạy và phản hồi `pg_isready`. Kiểm tra bằng `docker exec -it fit4110-db-lab05 pg_isready -U $POSTGRES_USER`.
-- [ ] **AI service ready:** container AI service trả về `200` cho endpoint `/health` và `/predict` hoạt động.
-- [ ] **API ready:** container API trả `200` cho `/health` và có thể tạo/lấy readings khi token hợp lệ.
-- [ ] **Environment variables:** `.env` đã được thiết lập đúng (APP_PORT, POSTGRES_USER, AUTH_TOKEN,…). Không sử dụng secret thật; lưu secret vào `.env` cục bộ, commit `.env.example`.
-- [ ] **Network & Ports:** mạng `team-internal` hoạt động; API gọi được AI bằng hostname `ai-service`; ports 8000 (API), 9000 (AI) và 5432 (DB) được map đúng.
-- [ ] **Image tags:** bạn đã build image với tag `v0.1.0-<team>` và push lên registry (ghcr.io hoặc Docker Hub). Xác nhận rằng tag xuất hiện trong registry.
+Before the in-class integration:
 
-Ghi chú thêm những vấn đề gặp phải hoặc điều chỉnh tại đây:
-
-```
-- Mô tả…
-```
+- [ ] Replace mock URLs in `.env` with partner laptop IP addresses.
+- [ ] Test both partner `/health` endpoints through the shared hotspot.
+- [x] Save local Compose, health, Newman and timeout evidence in `reports/`.
+- [ ] Push the final image tag to the selected registry.

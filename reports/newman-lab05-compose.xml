@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="FIT4110 Access Gate" tests="8" time="0.268">
+  <testsuite name="Health" id="4664dbba-b6b1-42c0-a2e4-c8339d185353" timestamp="2026-06-10T03:52:54.982Z" tests="2" failures="0" errors="0" time="0.053">
+    <testcase name="health is 200" time="0.053" classname="Health"/>
+    <testcase name="database is ready" time="0.053" classname="Health"/>
+  </testsuite>
+  <testsuite name="Reject missing token" id="3d52c9f9-8126-4b68-b664-5d0e651e1aa3" timestamp="2026-06-10T03:52:54.982Z" tests="1" failures="0" errors="0" time="0.007">
+    <testcase name="missing token is 401" time="0.007" classname="RejectMissingToken"/>
+  </testsuite>
+  <testsuite name="Allow active credential" id="44c842ac-8357-439e-a1a7-8d06798ec94c" timestamp="2026-06-10T03:52:54.982Z" tests="3" failures="0" errors="0" time="0.068">
+    <testcase name="event is created" time="0.068" classname="AllowActiveCredential"/>
+    <testcase name="decision is ALLOW" time="0.068" classname="AllowActiveCredential"/>
+    <testcase name="analytics was sent" time="0.068" classname="AllowActiveCredential"/>
+  </testsuite>
+  <testsuite name="Deny blocked credential" id="65ced9cb-269f-4417-a847-731ce5b270bb" timestamp="2026-06-10T03:52:54.982Z" tests="2" failures="0" errors="0" time="0.062">
+    <testcase name="event is created" time="0.062" classname="DenyBlockedCredential"/>
+    <testcase name="decision is DENY" time="0.062" classname="DenyBlockedCredential"/>
+  </testsuite>
+  <testsuite name="Reject invalid direction" id="e0e71551-b2fe-4e88-8695-033737ab96af" timestamp="2026-06-10T03:52:54.982Z" tests="1" failures="0" errors="0" time="0.005">
+    <testcase name="invalid payload is 422" time="0.005" classname="RejectInvalidDirection"/>
+  </testsuite>
+  <testsuite name="Get latest events" id="d44ce3ba-8f49-41dd-b802-469914d8e2d3" timestamp="2026-06-10T03:52:54.982Z" tests="2" failures="0" errors="0" time="0.027">
+    <testcase name="latest is 200" time="0.027" classname="GetLatestEvents"/>
+    <testcase name="items are returned" time="0.027" classname="GetLatestEvents"/>
+  </testsuite>
+  <testsuite name="Get event by ID" id="f81927b3-7804-4346-aab7-2787bde0b9c6" timestamp="2026-06-10T03:52:54.982Z" tests="1" failures="0" errors="0" time="0.021">
+    <testcase name="event is found" time="0.021" classname="GetEventById"/>
+  </testsuite>
+  <testsuite name="Event not found" id="2ecb8168-5101-4c82-a412-c5e5e551e4eb" timestamp="2026-06-10T03:52:54.982Z" tests="1" failures="0" errors="0" time="0.025">
+    <testcase name="unknown event is 404" time="0.025" classname="EventNotFound"/>
+  </testsuite>
+</testsuites>

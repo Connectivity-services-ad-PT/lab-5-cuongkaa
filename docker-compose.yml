@@ -1,71 +1,81 @@
-version: "3.8"
-
 services:
-  # Service API FastAPI
   api:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: fit4110-api-lab05
+    image: fit4110/access-gate:v1.0.0-team-gate
+    container_name: fit4110-access-gate
     env_file:
       - .env
     depends_on:
       db:
         condition: service_healthy
-      ai-service:
+      mock-core:
+        condition: service_healthy
+      mock-analytics:
         condition: service_healthy
     networks:
       - team-internal
-      - class-net
     ports:
       - "${APP_PORT:-8000}:8000"
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
-      interval: 30s
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=3)"]
+      interval: 10s
       timeout: 5s
-      retries: 3
+      retries: 5
       start_period: 10s
 
-  # PostgreSQL database service
   db:
     image: postgres:15-alpine
-    container_name: fit4110-db-lab05
+    container_name: fit4110-gate-db
     environment:
-      POSTGRES_USER: ${POSTGRES_USER:-lab05}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-lab05pass}
-      POSTGRES_DB: ${POSTGRES_DB:-iotdb}
+      POSTGRES_USER: ${POSTGRES_USER:-gate}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-gatepass}
+      POSTGRES_DB: ${POSTGRES_DB:-gatedb}
     volumes:
       - db-data:/var/lib/postgresql/data
     networks:
       - team-internal
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-lab05}"]
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-gate} -d ${POSTGRES_DB:-gatedb}"]
       interval: 10s
       timeout: 5s
       retries: 5
 
-  # AI service mẫu dùng Python HTTP server hoặc FastAPI
-  ai-service:
-    image: python:3.11-slim
-    container_name: fit4110-ai-lab05
-    working_dir: /service
-    volumes:
-      - ./src/ai_service:/service
-    command: ["python", "main.py"]
+  mock-core:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: fit4110/access-gate-mock:v1.0.0-team-gate
+    container_name: fit4110-mock-core
+    environment:
+      MOCK_ROLE: core
+    command: ["uvicorn", "mock_services.main:app", "--app-dir", "src", "--host", "0.0.0.0", "--port", "8001"]
     networks:
       - team-internal
     healthcheck:
-      test: ["CMD-SHELL", "python -c \"import requests; import sys; sys.exit(0) if requests.get('http://localhost:9000/health').status_code == 200 else sys.exit(1)\""]
-      interval: 30s
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8001/health', timeout=3)"]
+      interval: 10s
       timeout: 5s
-      retries: 3
-      start_period: 10s
+      retries: 5
+
+  mock-analytics:
+    image: fit4110/access-gate-mock:v1.0.0-team-gate
+    container_name: fit4110-mock-analytics
+    environment:
+      MOCK_ROLE: analytics
+    command: ["uvicorn", "mock_services.main:app", "--app-dir", "src", "--host", "0.0.0.0", "--port", "8002"]
+    networks:
+      - team-internal
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8002/health', timeout=3)"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
 networks:
   team-internal:
     driver: bridge
-  class-net:
-    external: true
 
 volumes:
   db-data:

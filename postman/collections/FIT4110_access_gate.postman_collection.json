@@ -1,0 +1,113 @@
+{
+  "info": {
+    "name": "FIT4110 Access Gate",
+    "_postman_id": "7bf8f887-b9d0-48e1-aaf4-bdde9cb21583",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health",
+      "request": {"method": "GET", "url": "{{baseUrl}}/health"},
+      "event": [{"listen": "test", "script": {"exec": [
+        "pm.test('health is 200', () => pm.response.to.have.status(200));",
+        "pm.test('database is ready', () => pm.expect(pm.response.json().database).to.eql('ready'));"
+      ]}}]
+    },
+    {
+      "name": "Reject missing token",
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {"mode": "raw", "raw": "{\"gate_id\":\"GATE-A01\",\"credential_id\":\"CARD-001\",\"direction\":\"entry\",\"timestamp\":\"2026-06-10T09:30:00+07:00\"}"},
+        "url": "{{baseUrl}}/api/v1/access-events"
+      },
+      "event": [{"listen": "test", "script": {"exec": [
+        "pm.test('missing token is 401', () => pm.response.to.have.status(401));"
+      ]}}]
+    },
+    {
+      "name": "Allow active credential",
+      "request": {
+        "method": "POST",
+        "header": [
+          {"key": "Authorization", "value": "Bearer {{authToken}}"},
+          {"key": "Content-Type", "value": "application/json"}
+        ],
+        "body": {"mode": "raw", "raw": "{\"gate_id\":\"GATE-A01\",\"credential_id\":\"CARD-001\",\"direction\":\"entry\",\"timestamp\":\"2026-06-10T09:30:00+07:00\",\"metadata\":{\"source\":\"card-reader\"}}"},
+        "url": "{{baseUrl}}/api/v1/access-events"
+      },
+      "event": [{"listen": "test", "script": {"exec": [
+        "pm.test('event is created', () => pm.response.to.have.status(201));",
+        "const body = pm.response.json();",
+        "pm.test('decision is ALLOW', () => pm.expect(body.decision).to.eql('ALLOW'));",
+        "pm.test('analytics was sent', () => pm.expect(body.analytics_status).to.eql('sent'));",
+        "pm.environment.set('eventId', body.event_id);"
+      ]}}]
+    },
+    {
+      "name": "Deny blocked credential",
+      "request": {
+        "method": "POST",
+        "header": [
+          {"key": "Authorization", "value": "Bearer {{authToken}}"},
+          {"key": "Content-Type", "value": "application/json"}
+        ],
+        "body": {"mode": "raw", "raw": "{\"gate_id\":\"GATE-A01\",\"credential_id\":\"BLOCKED-001\",\"direction\":\"entry\",\"timestamp\":\"2026-06-10T09:31:00+07:00\"}"},
+        "url": "{{baseUrl}}/api/v1/access-events"
+      },
+      "event": [{"listen": "test", "script": {"exec": [
+        "pm.test('event is created', () => pm.response.to.have.status(201));",
+        "pm.test('decision is DENY', () => pm.expect(pm.response.json().decision).to.eql('DENY'));"
+      ]}}]
+    },
+    {
+      "name": "Reject invalid direction",
+      "request": {
+        "method": "POST",
+        "header": [
+          {"key": "Authorization", "value": "Bearer {{authToken}}"},
+          {"key": "Content-Type", "value": "application/json"}
+        ],
+        "body": {"mode": "raw", "raw": "{\"gate_id\":\"GATE-A01\",\"credential_id\":\"CARD-001\",\"direction\":\"sideways\",\"timestamp\":\"2026-06-10T09:30:00+07:00\"}"},
+        "url": "{{baseUrl}}/api/v1/access-events"
+      },
+      "event": [{"listen": "test", "script": {"exec": [
+        "pm.test('invalid payload is 422', () => pm.response.to.have.status(422));"
+      ]}}]
+    },
+    {
+      "name": "Get latest events",
+      "request": {
+        "method": "GET",
+        "header": [{"key": "Authorization", "value": "Bearer {{authToken}}"}],
+        "url": "{{baseUrl}}/api/v1/access-events/latest?gate_id=GATE-A01&limit=10"
+      },
+      "event": [{"listen": "test", "script": {"exec": [
+        "pm.test('latest is 200', () => pm.response.to.have.status(200));",
+        "pm.test('items are returned', () => pm.expect(pm.response.json().items.length).to.be.above(0));"
+      ]}}]
+    },
+    {
+      "name": "Get event by ID",
+      "request": {
+        "method": "GET",
+        "header": [{"key": "Authorization", "value": "Bearer {{authToken}}"}],
+        "url": "{{baseUrl}}/api/v1/access-events/{{eventId}}"
+      },
+      "event": [{"listen": "test", "script": {"exec": [
+        "pm.test('event is found', () => pm.response.to.have.status(200));"
+      ]}}]
+    },
+    {
+      "name": "Event not found",
+      "request": {
+        "method": "GET",
+        "header": [{"key": "Authorization", "value": "Bearer {{authToken}}"}],
+        "url": "{{baseUrl}}/api/v1/access-events/GATE-20990101-NOTFOUND"
+      },
+      "event": [{"listen": "test", "script": {"exec": [
+        "pm.test('unknown event is 404', () => pm.response.to.have.status(404));"
+      ]}}]
+    }
+  ]
+}
