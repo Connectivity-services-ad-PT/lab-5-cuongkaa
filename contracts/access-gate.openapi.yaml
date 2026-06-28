@@ -48,6 +48,94 @@ paths:
           $ref: "#/components/responses/Problem"
         "503":
           $ref: "#/components/responses/Problem"
+  /api/v1/rfid/raw:
+    post:
+      summary: Process a raw RFID UID event and publish the processed MQTT event
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/RawRfidEvent"
+            example:
+              event_id: raw-rfid-abc123
+              event_type: rfid.uid.scanned
+              source_service: pi-rfid-simulator
+              device_id: rfid-reader-gate-01
+              timestamp: "2026-06-07T14:30:10+07:00"
+              uid: "04:A1:B2:C3:D4:03"
+              door_id: gate-a
+              location: Main Gate A
+              direction: in
+      responses:
+        "202":
+          description: RFID event processed
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ProcessedRfidEvent"
+        "401":
+          $ref: "#/components/responses/Problem"
+        "422":
+          $ref: "#/components/responses/Problem"
+  /api/v1/access/check:
+    post:
+      summary: Check an RFID UID against the access whitelist for Core Business
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AccessPolicyCheckRequest"
+            example:
+              request_id: core-policy-001
+              timestamp: "2026-06-20T09:30:00+07:00"
+              uid: "04:A1:B2:C3:D4:03"
+              door_id: gate-a
+              location: Main Gate A
+              direction: in
+      responses:
+        "200":
+          description: Realtime whitelist decision
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AccessPolicyCheckResponse"
+        "401":
+          $ref: "#/components/responses/Problem"
+        "422":
+          $ref: "#/components/responses/Problem"
+  /api/v1/rfid/swipes/latest:
+    get:
+      summary: Query recently stored RFID swipe audit records
+      parameters:
+        - name: access_result
+          in: query
+          schema:
+            type: string
+            enum: [granted, denied]
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100
+            default: 10
+      responses:
+        "200":
+          description: Recent RFID swipes
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [items]
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/StoredRfidSwipe"
+        "401":
+          $ref: "#/components/responses/Problem"
   /api/v1/access-events/latest:
     get:
       summary: Get latest access events
@@ -163,6 +251,155 @@ components:
       allOf:
         - $ref: "#/components/schemas/AccessEventCreate"
         - $ref: "#/components/schemas/AccessEventResult"
+    RawRfidEvent:
+      type: object
+      required: [event_id, event_type, timestamp, uid, door_id, direction]
+      properties:
+        event_id:
+          type: string
+        event_type:
+          type: string
+          example: rfid.uid.scanned
+        source_service:
+          type: [string, "null"]
+        device_id:
+          type: [string, "null"]
+        timestamp:
+          type: string
+          format: date-time
+        uid:
+          type: string
+          example: "04:A1:B2:C3:D4:03"
+        door_id:
+          type: string
+        location:
+          type: [string, "null"]
+        direction:
+          type: string
+          example: in
+    ProcessedRfidEvent:
+      type: object
+      required:
+        - event_id
+        - event_type
+        - source_service
+        - timestamp
+        - processed_at
+        - raw_event_id
+        - uid
+        - door_id
+        - direction
+        - access_result
+        - reason
+      properties:
+        event_id:
+          type: string
+        event_type:
+          type: string
+          example: access.swipe.processed
+        source_service:
+          type: string
+          example: team-gate
+        timestamp:
+          type: string
+          format: date-time
+        processed_at:
+          type: string
+          format: date-time
+        raw_event_id:
+          type: string
+        uid:
+          type: string
+        student_id:
+          type: [string, "null"]
+        full_name:
+          type: [string, "null"]
+        class_name:
+          type: [string, "null"]
+        door_id:
+          type: string
+        location:
+          type: [string, "null"]
+        direction:
+          type: string
+          enum: [in, out]
+        access_result:
+          type: string
+          enum: [granted, denied]
+        reason:
+          type: string
+          enum: [uid_matched, uid_not_found]
+    AccessPolicyCheckRequest:
+      type: object
+      required: [timestamp, uid, door_id, direction]
+      properties:
+        request_id:
+          type: [string, "null"]
+        timestamp:
+          type: string
+          format: date-time
+        uid:
+          type: string
+        door_id:
+          type: string
+        location:
+          type: [string, "null"]
+        direction:
+          type: string
+          enum: [in, out]
+    AccessPolicyCheckResponse:
+      type: object
+      required:
+        - request_id
+        - timestamp
+        - processed_at
+        - uid
+        - door_id
+        - direction
+        - access_result
+        - reason
+      properties:
+        request_id:
+          type: string
+        timestamp:
+          type: string
+          format: date-time
+        processed_at:
+          type: string
+          format: date-time
+        uid:
+          type: string
+        student_id:
+          type: [string, "null"]
+        full_name:
+          type: [string, "null"]
+        class_name:
+          type: [string, "null"]
+        door_id:
+          type: string
+        location:
+          type: [string, "null"]
+        direction:
+          type: string
+          enum: [in, out]
+        access_result:
+          type: string
+          enum: [granted, denied]
+        reason:
+          type: string
+          enum: [uid_matched, uid_not_found]
+    StoredRfidSwipe:
+      allOf:
+        - $ref: "#/components/schemas/ProcessedRfidEvent"
+        - type: object
+          required: [ingress, created_at]
+          properties:
+            ingress:
+              type: string
+              enum: [mqtt, rest, core_policy]
+            created_at:
+              type: string
+              format: date-time
     Problem:
       type: object
       required: [type, title, status, detail, instance]

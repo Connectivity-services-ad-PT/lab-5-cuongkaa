@@ -1,0 +1,11 @@
+{
+  "event_id": "raw-demo-001",
+  "event_type": "rfid.uid.scanned",
+  "source_service": "manual-test",
+  "device_id": "rfid-reader-gate-01",
+  "timestamp": "2026-06-18T09:30:00+07:00",
+  "uid": "04:A1:B2:C3:D4:03",
+  "door_id": "gate-a",
+  "location": "Main Gate A",
+  "direction": "in"
+}

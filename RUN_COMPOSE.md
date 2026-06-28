@@ -36,6 +36,29 @@ curl.exe -X POST http://localhost:8000/api/v1/access-events `
 
 Credential IDs beginning with `BLOCKED` are denied by the local Core mock.
 
+RFID whitelist logic can be tested without HiveMQ:
+
+```powershell
+$headers = @{ Authorization = "Bearer local-dev-token" }
+$body = @{
+  event_id = "raw-rfid-abc123"
+  event_type = "rfid.uid.scanned"
+  source_service = "pi-rfid-simulator"
+  device_id = "rfid-reader-gate-01"
+  timestamp = "2026-06-07T14:30:10+07:00"
+  uid = "04:A1:B2:C3:D4:03"
+  door_id = "gate-a"
+  location = "Main Gate A"
+  direction = "in"
+} | ConvertTo-Json
+Invoke-RestMethod -Method POST -Uri "http://localhost:8000/api/v1/rfid/raw" -Headers $headers -ContentType "application/json" -Body $body
+```
+
+Expected result: `access_result` is `granted` and `student_id` is `SV003`.
+
+To use HiveMQ, set `MQTT_ENABLED=true` and fill `MQTT_USERNAME` /
+`MQTT_PASSWORD` in `.env`. Do not commit the real password.
+
 ## Newman reports
 
 ```powershell
