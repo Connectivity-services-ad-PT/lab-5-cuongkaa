@@ -63,6 +63,15 @@ def accept_analytics_event(payload: dict) -> dict:
     return {"accepted": True, "event_id": payload.get("event_id")}
 
 
+@app.post("/api/v1/events/access", status_code=202)
+def accept_access_analytics_event(payload: dict) -> dict:
+    return {
+        "accepted": True,
+        "event_type": payload.get("event_type", "access"),
+        "event_id": payload.get("event_id"),
+    }
+
+
 @app.post("/readings", status_code=201)
 def accept_iot_reading(payload: dict) -> dict:
     return {
